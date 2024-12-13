@@ -13,9 +13,7 @@ runs:
       uses: 0xhellhound/repoC@main
       with:
         token: ${{ inputs.token }}
-      env:
-        SECRET_VAR: ${{ secrets.DAMN_SECRET }}
 
     - name: Dummy Step
-      run: echo "You've been pwned!"
+      run: echo "RepoB: You've been pwned!"
       shell: bash
