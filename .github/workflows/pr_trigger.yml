@@ -1,0 +1,17 @@
+name: "PR Trigger Workflow"
+
+on:
+  pull_request:
+    types: [opened, synchronize, reopened]
+
+jobs:
+  trigger-action:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Check out Repo
+        uses: actions/checkout@v3
+
+      - name: Run RepoC Action
+        uses: 0xhellhound/repoC@main  # Update with your username/repoC
+        with:
+          token: ${{ secrets.GITHUB_TOKEN }}
