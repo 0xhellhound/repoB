@@ -1,13 +1,18 @@
 name: "RepoB Action"
 description: "Intermediate action interacting with RepoC"
 
+inputs:
+  token:
+    description: "GitHub Token for accessing RepoC"
+    required: true
+
 runs:
   using: "composite"
   steps:
     - name: Use RepoC Action
       uses: 0xhellhound/repoC@main
       with:
-        token: ${{ secrets.GITHUB_TOKEN }}
+        token: ${{ inputs.token }}
 
     - name: Dummy Step
       run: echo "RepoB: You've been pwned!"
