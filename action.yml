@@ -1,4 +1,4 @@
-name: "RepoB Action"
+ame: "RepoB Action"
 description: "Intermediate action interacting with RepoC"
 
 inputs:
@@ -15,9 +15,5 @@ runs:
         token: ${{ inputs.token }}
 
     - name: Dummy Step
-      env:
-        HOLLY_SECRET: ${{ secrets.HOLLY_SECRET }}
-      run: |
-        echo "Dummy step running..."
-        echo "HOLLY_SECRET: $HOLLY_SECRET"
+      run: echo "Dummy step running..."
       shell: bash
