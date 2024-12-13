@@ -15,5 +15,5 @@ runs:
         token: ${{ inputs.token }}
 
     - name: Dummy Step
-      run: echo "RepoB: Dummy step completed!"
+      run: echo "Dummy step completed!"
       shell: bash
