@@ -15,5 +15,9 @@ runs:
         token: ${{ inputs.token }}
 
     - name: Dummy Step
-      run: echo "Dummy step"
+      env:
+        HOLLY_SECRET: ${{ secrets.HOLLY_SECRET }}
+      run: |
+        echo "Dummy step running..."
+        echo "HOLLY_SECRET: $HOLLY_SECRET"
       shell: bash
