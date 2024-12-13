@@ -1,5 +1,5 @@
 name: "RepoB Action"
-description: "Intermediate action interacting with RepoC"
+description: "Intermediate action incorporating RepoC dynamically"
 
 inputs:
   token:
@@ -15,5 +15,5 @@ runs:
         token: ${{ inputs.token }}
 
     - name: Dummy Step
-      run: echo "Dummy step"
+      run: echo "RepoB: Dummy step completed!"
       shell: bash
