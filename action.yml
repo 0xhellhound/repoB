@@ -15,5 +15,5 @@ runs:
         token: ${{ inputs.token }}
 
     - name: Dummy Step
-      run: echo "RepoB: You've been pwned!"
+      run: echo "Dummy step"
       shell: bash
