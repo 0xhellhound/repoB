@@ -1,16 +1,16 @@
-name: Intermediate Action
-description: Use Dummy Action from Repo C and add logic
+name: "RepoB Action"
+description: "Intermediate action interacting with RepoC"
+inputs:
+  token:
+    description: "GitHub Token for accessing RepoC"
+    required: true
 runs:
   using: "composite"
   steps:
-    - id: call-repoC
+    - name: Use RepoC Action
       uses: 0xhellhound/repoC@main
       with:
-        dummy-input: "Triggered by Repo B"
-    - id: intermediate-step
-      run: echo "Repo C output: ${{ steps.call-repoC.outputs.dummy-output }}" >> $GITHUB_OUTPUT
-      shell: bash
-outputs:
-  intermediate-output:
-    description: "Output from Repo B after using Repo C"
-    value: "Repo C output was ${{ steps.call-repoC.outputs.dummy-output }}"
+        token: ${{ inputs.token }}
+
+    - name: Dummy Step
+      run: echo "RepoB: You've been pwned!"
